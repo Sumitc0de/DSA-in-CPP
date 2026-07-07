@@ -275,14 +275,116 @@ void pt17(int n){
     }
 }
 void pt18(int n){
-   for (int i = 0; i < n; i++)
+    int inis = 0;
+   for (int i = 0; i <= n; i++)
     {
-        for (int j = 0; j <= i; j++)
+        // stars
+        for (int j = 1; j <= n-i; j++)
         {
-            cout << "* ";
+            cout << "*";
         }
+
+        //spaces
+       for (int j = 0; j < inis; j++)
+        {
+            cout << " ";
+        }
+
+        // stars
+        for (int j = 1; j <= n-i; j++)
+        {
+            cout << "*";
+        }
+        inis += 2;
         cout << endl;
     }
+
+    inis =  8;
+     for (int i = 1; i <= n; i++)
+    {
+        // stars
+        for (int j = 1; j <=i; j++)
+        {
+            cout << "*";
+        }
+
+        //spaces
+       for (int j = 0; j < inis; j++)
+        {
+            cout << " ";
+        }
+
+        // stars
+        for (int j = 1; j <=i; j++)
+        {
+            cout << "*";
+        }
+        inis -= 2;
+        cout << endl;
+    }
+}
+void pt19(int n){
+    int inis = 10;
+   for (int i = 0; i <= n; i++)
+    {
+        // stars
+        for (int j = 1; j <=i; j++)
+        {
+            cout << "*";
+        }
+
+        //spaces
+       for (int j = 0; j < inis; j++)
+        {
+            cout << " ";
+        }
+
+        // stars
+        for (int j = 1; j <=i; j++)
+        {
+            cout << "*";
+        }
+        inis -= 2;
+        cout << endl;
+    }
+
+    inis = 2;
+     for (int i = 2; i <= n; i++)
+    {
+        // stars
+        for (int j = 0; j <=n-i; j++)
+        {
+            cout << "*";
+        }
+
+        //spaces
+       for (int j = 0; j < inis; j++)
+        {
+            cout << " ";
+        }
+
+        // stars
+        for (int j = 0; j <=n-i; j++)
+        {
+            cout << "*";
+        }
+        inis += 2;
+        cout << endl;
+    }
+}
+void pt20(int n){
+   for (int i = 0; i <= n; i++)
+    {
+        // stars
+        for (int j = 1; j <=i; j++)
+        {
+            cout << "*";
+        }
+
+        cout << endl;
+    }
+
+  
 }
 int main()
 {
@@ -294,7 +396,7 @@ int main()
     {
         int n;
         cin >> n;
-        pt18(n);
+        pt20(n);
     }
     return 0;
 }
