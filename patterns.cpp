@@ -323,62 +323,54 @@ void pt18(int n){
         cout << endl;
     }
 }
+
 void pt19(int n){
-    int inis = 10;
-   for (int i = 0; i <= n; i++)
-    {
-        // stars
-        for (int j = 1; j <=i; j++)
-        {
-            cout << "*";
+
+    int spaces = 2*n-2;
+
+    for(int i=1;i<=2*n-1;i++){
+
+        int stars = i;
+
+        if(i > n)
+            stars = 2*n-i;
+
+
+        for(int j=1;j<=stars;j++){
+            cout<<"*";
         }
 
-        //spaces
-       for (int j = 0; j < inis; j++)
-        {
-            cout << " ";
+
+        for(int j=1;j<=spaces;j++){
+            cout<<" ";
         }
 
-        // stars
-        for (int j = 1; j <=i; j++)
-        {
-            cout << "*";
-        }
-        inis -= 2;
-        cout << endl;
-    }
 
-    inis = 2;
-     for (int i = 2; i <= n; i++)
-    {
-        // stars
-        for (int j = 0; j <=n-i; j++)
-        {
-            cout << "*";
+        for(int j=1;j<=stars;j++){
+            cout<<"*";
         }
 
-        //spaces
-       for (int j = 0; j < inis; j++)
-        {
-            cout << " ";
-        }
 
-        // stars
-        for (int j = 0; j <=n-i; j++)
-        {
-            cout << "*";
-        }
-        inis += 2;
-        cout << endl;
+        cout<<endl;
+
+
+        if(i<n)
+            spaces-=2;
+        else
+            spaces+=2;
     }
 }
+
 void pt20(int n){
-   for (int i = 0; i <= n; i++)
+   for (int i = 0; i < n; i++)
     {
         // stars
-        for (int j = 1; j <=i; j++)
+        for (int j = 0; j <n; j++)
         {
-            cout << "*";
+            if(i ==0 || j==0 || i == n-1 || j == n-1){
+                cout << "*";
+            }
+            else cout << " ";
         }
 
         cout << endl;
