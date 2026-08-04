@@ -69,13 +69,13 @@ void pt6(int n)
 }
 void pt7(int n)
 {
-    for (int i = 1; i <= n; i++)
+    for (int i = 0; i <n; i++)
     {
-        for (int j = 1; j <= i - 1; j++)
+        for (int j = 0 ; j < i; j++)
         {
             cout << " ";
         }
-        for (int j = 1; j <= (2 * (n - i) + 1); j++)
+        for (int j = 0; j < (2 * (n - i) + 1); j++)
         {
             cout << "*";
         }
@@ -116,7 +116,6 @@ void pt8(int n)
 void pt9(int n)
 {
     int i, j;
-    // Simple Logic print diamond + inverted Diamond
 
     for (i = 1; i <= n; i++)
     {
@@ -388,7 +387,7 @@ int main()
     {
         int n;
         cin >> n;
-        pt20(n);
+        pt19(n);
     }
     return 0;
 }
