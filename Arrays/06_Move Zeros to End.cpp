@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #include <set>
+#include <algorithm>
 using namespace std;
 
 // Brute force Time Complexity: O(n) Space Complexity: O(N)
@@ -49,6 +50,24 @@ int moveZerosToEnd(vector<int>& arr) {
 }
 
 
+// Two pointer approach Time Complexity: O(n) Space Complexity: O(1)
+int moveZerosToEndTwoPointer(vector<int>& arr) {
+    int n = arr.size();
+    int left = 0;  // Pointer for the position of the next non-zero element
+
+    if(left >= n) return 0;  // Edge case: if the array is empty
+    
+    for (int right = 0; right < n; right++) {
+        if (arr[right] != 0) {
+            swap(arr[left], arr[right]);  // Swap non-zero element to the front
+            left++;
+        }
+    }
+
+    for(int i = 0; i < n; i++){
+        cout << arr[i] << " ";  // Print each element of the modified array
+    }
+}
 
 
 
@@ -76,7 +95,8 @@ int main()
         for(int i = 0; i < n; i++)
             cin >> arr[i];
 
-        cout << moveZerosToEndBruteForce(arr) << "\n";
+        // cout << moveZerosToEndBruteForce(arr) << "\n";
+        cout << moveZerosToEndTwoPointer(arr) << "\n";
         // cout << moveZerosToEnd(arr) << "\n";
         
     }
